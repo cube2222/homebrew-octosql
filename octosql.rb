@@ -5,21 +5,21 @@
 class Octosql < Formula
   desc "OctoSQL is a query tool that allows you to join, analyse and transform data from multiple databases and file formats using SQL."
   homepage "https://github.com/cube2222/octosql"
-  version "0.9.2"
+  version "0.9.3"
   license "MPL-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/cube2222/octosql/releases/download/v0.9.2/octosql_0.9.2_darwin_arm64.tar.gz"
-      sha256 "28b6bf57d95d4e0bc262dc1a06c8a72aa973dda01a5c6ab9adbbf6dd2932ff58"
+      url "https://github.com/cube2222/octosql/releases/download/v0.9.3/octosql_0.9.3_darwin_arm64.tar.gz"
+      sha256 "29895e01a0f0318eb4cacf5185d29d1f06f52e79983c1644adecb450e34459e5"
 
       def install
         bin.install "octosql"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cube2222/octosql/releases/download/v0.9.2/octosql_0.9.2_darwin_amd64.tar.gz"
-      sha256 "01361e6679143a5e1a3d8c3f22585fcf05027e84a08ef800e206b3715a61aadc"
+      url "https://github.com/cube2222/octosql/releases/download/v0.9.3/octosql_0.9.3_darwin_amd64.tar.gz"
+      sha256 "f5b8f6bea30802c55ed5cfa03fbc51d53f35301664c3b7eafd4443d312cd0246"
 
       def install
         bin.install "octosql"
@@ -28,17 +28,17 @@ class Octosql < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/cube2222/octosql/releases/download/v0.9.2/octosql_0.9.2_linux_arm64.tar.gz"
-      sha256 "d422b0fde60ba808ff08ef315d96db3b65df1fe1318b5e95697ed8bda4765a7f"
+    if Hardware::CPU.intel?
+      url "https://github.com/cube2222/octosql/releases/download/v0.9.3/octosql_0.9.3_linux_amd64.tar.gz"
+      sha256 "ef81e34005220dc596a75660dbe551eb01d26badab88c3f042da5b9618be1d14"
 
       def install
         bin.install "octosql"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/cube2222/octosql/releases/download/v0.9.2/octosql_0.9.2_linux_amd64.tar.gz"
-      sha256 "546d08e99d0fdf02ede26a4d4836b9b5bc3157cf7d6d96bce09df59a54d1f536"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/cube2222/octosql/releases/download/v0.9.3/octosql_0.9.3_linux_arm64.tar.gz"
+      sha256 "30a88ff9d128f7385a8549f254bcec6307976bfd1ad8e44bfd1df6bd37414328"
 
       def install
         bin.install "octosql"
