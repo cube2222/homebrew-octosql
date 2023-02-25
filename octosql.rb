@@ -9,17 +9,17 @@ class Octosql < Formula
   license "MPL-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/cube2222/octosql/releases/download/v0.12.1/octosql_0.12.1_darwin_amd64.tar.gz"
-      sha256 "8f14336bc19bf40f522dc9d0282c60cd1a7081f0dc53e0015bc95a1879f16b75"
+    if Hardware::CPU.arm?
+      url "https://github.com/cube2222/octosql/releases/download/v0.12.1/octosql_0.12.1_darwin_arm64.tar.gz"
+      sha256 "6041c8441100abf895939e64868dede234c0b9183b2de8871f1bd2bc8664a65c"
 
       def install
         bin.install "octosql"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/cube2222/octosql/releases/download/v0.12.1/octosql_0.12.1_darwin_arm64.tar.gz"
-      sha256 "8c0a7c454762cb5b618db8c24448c6a846b65f0707bb29332aaed111499ad9ab"
+    if Hardware::CPU.intel?
+      url "https://github.com/cube2222/octosql/releases/download/v0.12.1/octosql_0.12.1_darwin_amd64.tar.gz"
+      sha256 "b95f493903056efc1b2d5cbb8b83b2d7b0d8a95c3c7a4cffb049f35ea4d64c29"
 
       def install
         bin.install "octosql"
@@ -30,7 +30,7 @@ class Octosql < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/cube2222/octosql/releases/download/v0.12.1/octosql_0.12.1_linux_arm64.tar.gz"
-      sha256 "a37dc01e032d63b31c0d8f749c305da828ad5145263afe2188e6a3056a95872e"
+      sha256 "4d47b81026edca145a5dcb5eb9ecb3baef47157c03fb4198116162973a0df528"
 
       def install
         bin.install "octosql"
@@ -38,7 +38,7 @@ class Octosql < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/cube2222/octosql/releases/download/v0.12.1/octosql_0.12.1_linux_amd64.tar.gz"
-      sha256 "ed9eefaa338f0fc3556d812dc83ea5b07ba336daa92d0bfaf10f296be6475ddc"
+      sha256 "3d1d3b13732f765866594dabaf249e225054bd800f091d0fb072ecf882e8add0"
 
       def install
         bin.install "octosql"
